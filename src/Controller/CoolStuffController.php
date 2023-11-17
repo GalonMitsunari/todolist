@@ -18,4 +18,35 @@ class CoolStuffController extends AbstractController
             'path' => 'src/Controller/CoolStuffController.php',
         ]);
     }
+        /**
+     * @Route("/blog", name="app_blog")
+     */
+    public function blog(): JsonResponse
+    {
+        return $this->json([
+            'message' => 'Page de Blog ',
+            'path' => 'src/Controller/CoolStuffController.php',
+        ]);
+    }
+    /**
+     * @Route("/blog/{page}", name="app_page", requirements={"page"="\d+"})
+     */
+    public function page($page): JsonResponse
+    {
+        return $this->json([
+            'message' => 'Page de Blog ' . $page,
+            'path' => 'src/Controller/CoolStuffController.php',
+        ]);
+    }
+    /**
+     * @Route("/blog/{slug}", name="app_slug", requirements={"slug"="\S+"})
+     */
+    public function slug($slug): JsonResponse
+    {
+        return $this->json([
+            'message' => 'liste des articles ' . $slug,
+            'path' => 'src/Controller/CoolStuffController.php',
+        ]);
+    }
 }
+
