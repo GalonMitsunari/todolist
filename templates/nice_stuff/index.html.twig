@@ -12,6 +12,13 @@
     <h1>Hello {{ controller_name }}! ✅</h1>
 
     This friendly message is coming from:
+    {% for label, messages in app.flashes %}
+        {% for message in messages %}
+            <div class="alert alert-{{ label }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endfor %}
     <ul>
         <li>Your controller at <code><a href="{{ 'C:/xampp/htdocs/cours/quali/myapp/src/Controller/NiceStuffController.php'|file_link(0) }}">src/Controller/NiceStuffController.php</a></code></li>
         <li>Your template at <code><a href="{{ 'C:/xampp/htdocs/cours/quali/myapp/templates/nice_stuff/index.html.twig'|file_link(0) }}">templates/nice_stuff/index.html.twig</a></code></li>
