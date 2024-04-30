@@ -89,21 +89,4 @@ class TodoController extends AbstractController
         return $this->redirectToRoute('app_todo_index', [], Response::HTTP_SEE_OTHER);
     }
 }
-class TaskController extends AbstractController
-{
-    /**
-     * @Route("/update-task/{id}/{status}", name="update_task", methods={"POST"})
-     */
-    public function updateTaskStatus(Request $request, $id, $status)
-    {
-        // Traitez la mise à jour du statut de la tâche ici
-        // Par exemple, vous pouvez récupérer l'entité Task correspondante par son ID,
-        // changer son statut et sauvegarder les modifications
 
-        // Exemple basique pour illustrer la réponse
-        $newStatus = $status === 'done' ? 'todo' : 'done';
-
-        // Retournez une réponse JSON par exemple
-        return new JsonResponse(['status' => $newStatus]);
-    }
-}

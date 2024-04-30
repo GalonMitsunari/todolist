@@ -11,7 +11,7 @@
                 <th>Id</th>
                 <th>Name</th>
                 <th>actions</th>
-                <th>status</th>
+                <th>Etat</th>
             </tr>
         </thead>
         <tbody>
@@ -28,11 +28,11 @@
             </tr>
         {% else %}
             <tr>
-                <td colspan="3">no records found</td>
+                <td colspan="3">Pas de tâche en cours</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('app_todo_new') }}">Create new</a>
+    <a href="{{ path('app_todo_new') }}">Créer une tâche</a>
 {% endblock %}
